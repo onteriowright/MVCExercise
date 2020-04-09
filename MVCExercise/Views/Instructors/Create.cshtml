@@ -1,10 +1,10 @@
-﻿@model MVCExercise.Models.Instructor
+﻿@model MVCExercise.Models.InstructorEditViewModel
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Add A Instructor</h1>
 
 <h4>Instructor</h4>
 <hr />
@@ -34,7 +34,9 @@
             </div>
             <div class="form-group">
                 <label asp-for="CohortId" class="control-label"></label>
-                <input asp-for="CohortId" class="form-control" />
+                <select asp-for="CohortId" asp-items="Model.CohortOptions" class="form-control">
+                    <option>Please Select A Cohort</option>
+                </select>
                 <span asp-validation-for="CohortId" class="text-danger"></span>
             </div>
             <div class="form-group">

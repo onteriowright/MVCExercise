@@ -1,10 +1,10 @@
-﻿@model MVCExercise.Models.Student
+﻿@model MVCExercise.Models.StudentEditViewModel
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Edit @Html.DisplayFor(modelItem => Model.FirstName)'s Profile</h1>
 
 <h4>Student</h4>
 <hr />
@@ -12,6 +12,7 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="StudentId" type="hidden" />
             <div class="form-group">
                 <label asp-for="SlackHandle" class="control-label"></label>
                 <input asp-for="SlackHandle" class="form-control" />
@@ -28,8 +29,8 @@
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CohortId" class="control-label"></label>
-                <input asp-for="CohortId" class="form-control" />
+                <label asp-for="CohortId" class="control-label">Cohort</label>
+                <select asp-for="CohortId" asp-items="Model.CohortOptions" class="form-control"></select>
                 <span asp-validation-for="CohortId" class="text-danger"></span>
             </div>
             <div class="form-group">

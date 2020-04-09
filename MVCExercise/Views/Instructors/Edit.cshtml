@@ -1,10 +1,10 @@
-﻿@model MVCExercise.Models.Instructor
+﻿@model MVCExercise.Models.InstructorEditViewModel
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+    <h1>Edit @Html.DisplayFor(modelItem => Model.FirstName)'s Profile</h1>
 
 <h4>Instructor</h4>
 <hr />
@@ -12,6 +12,7 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="InstructorId" type="hidden" />
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
                 <input asp-for="FirstName" class="form-control" />
@@ -34,11 +35,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="CohortId" class="control-label"></label>
-                <input asp-for="CohortId" class="form-control" />
+                <select asp-for="CohortId" asp-items="Model.CohortOptions" class="form-control"></select>
                 <span asp-validation-for="CohortId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save Instructor" class="btn btn-primary" />
             </div>
         </form>
     </div>

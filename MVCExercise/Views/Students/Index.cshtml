@@ -7,14 +7,11 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-sm btn-dark" asp-action="Create">Create New Student</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.SlackHandle)
             </th>
@@ -35,9 +32,6 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.SlackHandle)
                 </td>
                 <td>
@@ -47,7 +41,7 @@
                     @Html.DisplayFor(modelItem => item.LastName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CohortId)
+                    @Html.DisplayFor(modelItem => item.Cohort.Name)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
