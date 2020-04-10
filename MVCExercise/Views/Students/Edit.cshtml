@@ -4,9 +4,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit @Html.DisplayFor(modelItem => Model.FirstName)'s Profile</h1>
+<h1>Editing @Html.DisplayFor(modelItem => Model.FirstName)'s Profile</h1>
 
-<h4>Student</h4>
+<h4>@Html.DisplayFor(modelItem => Model.FirstName) @Html.DisplayFor(modelItem => Model.LastName)</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -34,7 +34,7 @@
                 <span asp-validation-for="CohortId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save Student" class="btn btn-primary" />
             </div>
         </form>
     </div>

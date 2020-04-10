@@ -4,9 +4,9 @@
     ViewData["Title"] = "Edit";
 }
 
-    <h1>Edit @Html.DisplayFor(modelItem => Model.FirstName)'s Profile</h1>
+<h1>Editing @Html.DisplayFor(modelItem => Model.FirstName)'s Profile</h1>
 
-<h4>Instructor</h4>
+<h4>@Html.DisplayFor(modelItem => Model.FirstName) @Html.DisplayFor(modelItem => Model.LastName)</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
