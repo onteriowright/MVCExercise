@@ -40,7 +40,7 @@ namespace MVCExercise.Controllers
                     cmd.CommandText = @"SELECT i.Id, i.FirstName, i.LastName, i.SlackHandle, i.Specialty, i.CohortId AS InstructorCohortId, c.[Name], c.Id AS CohortId
                                         FROM Instructor i
                                         LEFT JOIN Cohort c
-                                        ON i.Id = c.Id";
+                                        ON i.CohortId = c.Id";
 
                     var reader = cmd.ExecuteReader();
                     var instructors = new List<Instructor>();

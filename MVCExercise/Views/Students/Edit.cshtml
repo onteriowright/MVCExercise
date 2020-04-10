@@ -34,14 +34,11 @@
                 <span asp-validation-for="CohortId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save Student" class="btn btn-primary" />
+                <input type="submit" value="Save Student" class="btn btn-sm btn-outline-primary" />
+                <a class="btn btn-sm btn-outline-secondary" asp-action="Index">Back to List</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
